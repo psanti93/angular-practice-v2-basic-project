@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -12,8 +12,16 @@ export class RecipeListComponent {
     new Recipe("Chicken Masala", "A classic Indian dish!", "https://amandascookin.com/wp-content/uploads/2023/01/Chicken-Tikka-Masala-RCSQ-1100x1100.jpg")
   ];
 
+  // 3. propogate up to the recipes component
+  @Output()
+  recipeSelected = new EventEmitter<Recipe>();
+
   constructor(){
 
+  }
+  // 3. propogate up to the recipes component
+  onRecipeSelected(recipe:Recipe){
+    this.recipeSelected.emit(recipe)
   }
 
 }

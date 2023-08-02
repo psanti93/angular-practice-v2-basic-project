@@ -7,6 +7,7 @@
 <div class="row">
   <!-- TODO will eventually be moved over to recipe item component-->
   <div class="col-xs-12">
-    <app-recipe-item *ngFor="let recipe of recipes" [recipe-item]="recipe"></app-recipe-item>
+    <!-- 2. "receive" item from recipe-item component from the emitter recipeSelected -->
+    <app-recipe-item *ngFor="let recipe of recipes" [recipe-item]="recipe" (recipeSelected)="onRecipeSelected(recipe)"></app-recipe-item>
   </div>
 </div>
