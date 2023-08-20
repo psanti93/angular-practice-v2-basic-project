@@ -10,6 +10,8 @@ import { RecipeService } from "./recipe.service";
 export class RecipeComponent {
   selectedRecipe: Recipe;
 
+  //3. Have the Recipe component be injected by the recipe service and subscribe to the emitter
+  // emit out the recipe to a variable called selectedRecipe
   constructor(private recipeService: RecipeService){
     this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
       this.selectedRecipe = recipe

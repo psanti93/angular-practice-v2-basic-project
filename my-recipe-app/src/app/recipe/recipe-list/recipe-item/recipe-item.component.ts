@@ -14,7 +14,7 @@ export class RecipeItemComponent {
   constructor(private recipeService: RecipeService){
 
   }
-
+  //2. Have the emitter in recipe service pick up the recipe element
   onSelected(){
     this.recipeService.recipeSelected.emit(this.recipe);
   }

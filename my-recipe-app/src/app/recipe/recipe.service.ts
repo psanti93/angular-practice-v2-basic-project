@@ -3,6 +3,7 @@ import { Recipe } from "./recipe.model";
 
 export class RecipeService{
 
+  // 2a. use the emitter to emit out a recipe everytime an action is done on it
   recipeSelected = new EventEmitter<Recipe>();
 
 private recipes: Recipe [] = [
