@@ -1,6 +1,9 @@
+import { EventEmitter } from "@angular/core";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService{
+
+  recipeSelected = new EventEmitter<Recipe>();
 
 private recipes: Recipe [] = [
     new Recipe("Burrito Bowl", "Tasty burrito bowl", "https://healthyfitnessmeals.com/wp-content/uploads/2018/08/Grilled-chicken-burrito-bowls-2.jpg"),
@@ -11,4 +14,6 @@ private recipes: Recipe [] = [
     // returns a copy of the recipes array using slice()
     return this.recipes.slice();
   }
+
+
 }
