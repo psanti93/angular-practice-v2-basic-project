@@ -16,4 +16,10 @@ export class ShoppingListService {
     this.ingredients.push(ingredient)
     this.ingredientsChange.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]){
+    // this takes all the ingredients in an array and pushes them into the array one at a time
+    this.ingredients.push(...ingredients);
+    this.ingredientsChange.emit(this.ingredients.slice());
+  }
 }
